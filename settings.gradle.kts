@@ -22,10 +22,11 @@ dependencyResolutionManagement {
 
 rootProject.name = "Moises MusicPlayer"
 include(":app")
-include(":core:network")
-include(":data:song-search")
 include(":core:model")
-include(":feature:song-search")
+include(":core:network")
+include(":data:media-player-service")
+include(":data:song-search")
 include(":domain")
 include(":domain:song-search")
-include(":data:media-player-service")
+include(":feature:song-player")
+include(":feature:song-search")

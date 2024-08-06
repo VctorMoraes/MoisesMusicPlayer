@@ -2,10 +2,10 @@ package com.victor.song_search.viewmodel
 
 import android.app.Application
 import android.content.ComponentName
-import android.net.Uri
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.media3.common.MediaItem
+import androidx.media3.common.MediaMetadata
 import androidx.media3.session.MediaController
 import androidx.media3.session.SessionToken
 import androidx.paging.PagingData
@@ -24,7 +24,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(
+class SongSearchViewModel @Inject constructor(
     application: Application,
     val searchSongUseCase: SearchSongUseCase
 ) : AndroidViewModel(application) {
@@ -41,6 +41,7 @@ class HomeViewModel @Inject constructor(
             applicationContext,
             ComponentName(applicationContext, MediaPlayerService::class.java)
         )
+
         val controllerFuture =
             MediaController.Builder(applicationContext, sessionToken).buildAsync()
         controllerFuture.addListener(
@@ -67,12 +68,28 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    fun play(songPreviewUri: Uri) {
-        val mediaItem = MediaItem.fromUri(songPreviewUri)
-        mediaController.addMediaItem(mediaItem)
-        mediaController.prepare()
-        mediaController.play()
-    }
+    fun play(song: SongModel) {
+        mediaController.clearMediaItems()
 
+        val x = "albumId" to 0L
+        val mediaItem =
+            MediaItem.Builder()
+                .setMediaId(song.songId.toString())
+                .setUri(song.songPreviewUri)
+                .setTag(x)
+                .setMediaMetadata(
+                    MediaMetadata.Builder()
+                        .setTitle(song.songName)
+                        .setArtist(song.artistName)
+                        .setAlbumTitle(song.albumName)
+                        .setArtworkUri(song.songImageUri)
+                        .build()
+                )
+                .build()
+
+        mediaController.addMediaItem(mediaItem)
+        mediaController.playWhenReady = true
+        mediaController.prepare()
+    }
 }
 

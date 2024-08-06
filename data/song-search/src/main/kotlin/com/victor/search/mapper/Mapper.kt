@@ -10,6 +10,6 @@ fun SearchItemResponseDTO.toModel() =
         songName = this.trackName,
         artistName = this.artistName,
         albumName = this.collectionName,
-        songImageUrl = this.artworkUrl100,
+        songImageUri = this.artworkUrl100.toUri(),
         songPreviewUri = this.songPreviewUrl.toUri()
     )

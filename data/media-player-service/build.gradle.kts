@@ -8,6 +8,6 @@ android {
 }
 
 dependencies {
-    api("androidx.media3:media3-exoplayer:1.4.0")
-    api("androidx.media3:media3-session:1.4.0")
+    api(libs.androidx.media3.exoplayer)
+    api(libs.androidx.media3.session)
 }
