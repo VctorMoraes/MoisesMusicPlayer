@@ -15,7 +15,7 @@ java {
 
 tasks.withType<KotlinCompile>().configureEach {
     kotlinOptions {
-        freeCompilerArgs =listOf("-Xcontext-receivers")
+        freeCompilerArgs = listOf("-Xcontext-receivers")
         jvmTarget = JavaVersion.VERSION_17.toString()
     }
 }
@@ -24,6 +24,7 @@ dependencies {
     compileOnly(libs.android.gradlePlugin)
     compileOnly(libs.kotlin.gradlePlugin)
     compileOnly(libs.ksp.gradlePlugin)
+    compileOnly(libs.kover.gradlePlugin)
 }
 
 gradlePlugin {
@@ -40,13 +41,17 @@ gradlePlugin {
             id = "moisesmusicplayer.android.hilt"
             implementationClass = "AndroidHiltConventionPlugin"
         }
-//        register("androidRoom") {
-//            id = "moisesmusicplayer.android.room"
-//            implementationClass = "AndroidRoomConventionPlugin"
-//        }
+        register("kover") {
+            id = "moisesmusicplayer.android.kover"
+            implementationClass = "KoverConventionPlugin"
+        }
         register("androidLibrary") {
             id = "moisesmusicplayer.android.library"
             implementationClass = "AndroidLibraryConventionPlugin"
+        }
+        register("androidLibraryCompose") {
+            id = "moisesmusicplayer.android.library.compose"
+            implementationClass = "AndroidLibraryComposeConventionPlugin"
         }
         register("androidDataNetwork") {
             id = "moisesmusicplayer.android.data.network"

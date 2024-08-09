@@ -26,8 +26,10 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                     versionCode = 1
                     versionName = "1.0"
 
-                    testInstrumentationRunner = "com.victor.moisesmusicplayer.HiltTestRunner"
-//                    testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+                    multiDexEnabled = true
+
+//                    testInstrumentationRunner = "com.victor.moisesmusicplayer.HiltTestRunner"
+                    testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
                 }
 
                 buildTypes {

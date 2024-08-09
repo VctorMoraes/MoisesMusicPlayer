@@ -153,7 +153,6 @@ fun Controls(
                 .rotate(180f)
                 .clickable {
                     onPreviousClicked()
-
                 },
             painter = painterResource(id = R.drawable.seek),
             contentDescription = "goBack"

@@ -34,8 +34,9 @@
 
         <service
             android:name="com.victor.media_player_service.MediaPlayerService"
-            android:exported="false"
-            android:foregroundServiceType="mediaPlayback">
+            android:exported="true"
+            android:foregroundServiceType="mediaPlayback"
+            android:permission="TODO">
             <intent-filter>
                 <action android:name="androidx.media3.session.MediaSessionService" />
             </intent-filter>

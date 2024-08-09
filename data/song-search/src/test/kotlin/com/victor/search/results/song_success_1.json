@@ -1,0 +1,61 @@
+{
+  "resultCount": 5,
+  "results": [
+    {
+      "wrapperType": "track",
+      "artistId": 488289,
+      "collectionId": 725812243,
+      "trackId": 725812418,
+      "artistName": "Megadeth",
+      "collectionName": "Countdown to Extinction (Bonus Track Version)",
+      "trackName": "Symphony of Destruction",
+      "previewUrl": "https://song_preview_url.mp4",
+      "artworkUrl100": "https://song_artwork_url.jpg"
+    },
+    {
+      "wrapperType": "track",
+      "artistId": 488289,
+      "collectionId": 725787773,
+      "trackId": 725788044,
+      "artistName": "Megadeth",
+      "collectionName": "Greatest Hits: Back to the Start",
+      "trackName": "Angry Again",
+      "previewUrl": "https://song_preview_url.mp4",
+      "artworkUrl100": "https://song_artwork_url.jpg"
+    },
+    {
+      "wrapperType": "track",
+      "artistId": 488289,
+      "collectionId": 725812243,
+      "trackId": 725812461,
+      "artistName": "Megadeth",
+      "collectionName": "Countdown to Extinction (Bonus Track Version)",
+      "trackName": "Sweating Bullets",
+      "previewUrl": "https://song_preview_url.mp4",
+      "artworkUrl100": "https://song_artwork_url.jpg"
+    },
+    {
+      "wrapperType": "track",
+      "artistId": 488289,
+      "collectionId": 725787773,
+      "trackId": 725788247,
+      "artistName": "Megadeth",
+      "collectionName": "Greatest Hits: Back to the Start",
+      "trackName": "Symphony of Destruction",
+      "previewUrl": "https://song_preview_url.mp4",
+      "artworkUrl100": "https://song_artwork_url.jpg"
+    },
+    {
+      "wrapperType": "track",
+      "artistId": 488289,
+      "collectionId": 725787773,
+      "trackId": 725788007,
+      "artistName": "Megadeth",
+      "collectionName": "Greatest Hits: Back to the Start",
+      "trackName": "Peace Sells",
+      "previewUrl": "https://song_preview_url.mp4",
+      "artworkUrl100": "https://song_artwork_url.jpg"
+    }
+  ]
+}
+

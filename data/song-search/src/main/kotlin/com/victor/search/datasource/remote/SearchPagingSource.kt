@@ -2,12 +2,12 @@ package com.victor.search.datasource.remote
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.victor.network.NoConnectionException
+import com.victor.exceptions.NoConnectionException
+import com.victor.exceptions.UnknownException
 import com.victor.network.fold
 import com.victor.search.datasource.remote.api.SearchApi
 import com.victor.search.datasource.remote.dto.SearchItemResponseDTO
 import retrofit2.HttpException
-import java.io.IOException
 
 class SearchPagingSource(
     private val searchApi: SearchApi,
@@ -32,11 +32,11 @@ class SearchPagingSource(
                             prevKey = if (offset == SEARCH_STARTING_PAGE_INDEX) null else offset - 1,
                             nextKey = nextKey
                         )
-                    } ?: LoadResult.Error(NoConnectionException())
+                    } ?: LoadResult.Error(UnknownException())
                 }, {
-                    LoadResult.Error(NoConnectionException())
+                    LoadResult.Error(UnknownException())
                 })
-        } catch (exception: IOException) {
+        } catch (exception: NoConnectionException) {
             return LoadResult.Error(exception)
         } catch (exception: HttpException) {
             return LoadResult.Error(exception)

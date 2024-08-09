@@ -19,6 +19,8 @@ pagingVersion = "3.3.1"
 
 coil = "2.7.0"
 
+lottie = "6.4.1"
+
 kotlinxSerializationJson = "1.5.1"
 okhttp = "4.10.0"
 retrofit = "2.9.0"
@@ -31,18 +33,31 @@ ksp = "1.9.22-1.0.18"
 
 androidxComposeCompiler = "1.5.1"
 materialVersion = "1.12.0"
+uiTooling = "1.6.8"
+
+#Testing
+kotlinCoroutinesTest = "1.7.3"
+mockk = "1.13.10"
+kover = "0.7.6"
+mockwebserver = "4.10.0"
+pagingTestingAndroid = "3.3.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "androidLifecycle" }
 androidx-media3-exoplayer = { group = "androidx.media3", name = "media3-exoplayer", version.ref = "media3" }
 androidx-media3-session = { group = "androidx.media3", name = "media3-session", version.ref = "media3" }
-junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-lifecycle-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidLifecycle" }
+androidx-lifecycle-compose-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "androidLifecycle" }
+
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+
+lottie = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottie" }
 
 androidx-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "splashscreen" }
 androidx-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navivationCompose" }
@@ -54,6 +69,9 @@ hilt-navigation = { group = "androidx.hilt", name = "hilt-navigation-compose", v
 androidx-paging = { group = "androidx.paging", name = "paging-runtime", version.ref = "pagingVersion" }
 androidx-paging-compose = { group = "androidx.paging", name = "paging-compose", version.ref = "pagingVersion" }
 
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling", version.ref = "uiTooling" }
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview-android", version.ref = "uiTooling" }
+
 coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
 
 # Network
@@ -62,30 +80,37 @@ okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor",
 retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-kotlinx-serialization = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "retrofitKotlinxSerializationJson" }
 
-androidx-lifecycle-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidLifecycle" }
-androidx-lifecycle-compose-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "androidLifecycle" }
-
-androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+# Test Dependencies
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinCoroutinesTest" }
+mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
+okhttp-mockwebserver = { group = "com.squareup.okhttp3", name = "mockwebserver", version.ref = "mockwebserver" }
 
 # Dependencies of the included build-logic
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+kover-gradlePlugin = { group = "org.jetbrains.kotlinx", name = "kover-gradle-plugin", version.ref = "kover" }
 material = { group = "com.google.android.material", name = "material", version.ref = "materialVersion" }
+androidx-paging-testing-android = { group = "androidx.paging", name = "paging-testing-android", version.ref = "pagingTestingAndroid" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 jetbrains-kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 
 # Convetion Plugins
 convention-application = { id = "moisesmusicplayer.android.application", version = "unspecified" }
 convention-data-network = { id = "moisesmusicplayer.android.data.network", version = "unspecified" }
+convention-feature = { id = "moisesmusicplayer.android.feature", version = "unspecified" }
+convention-kover = { id = "moisesmusicplayer.android.kover", version = "unspecified" }
 convention-hilt = { id = "moisesmusicplayer.android.hilt", version = "unspecified" }
 convention-library = { id = "moisesmusicplayer.android.library", version = "unspecified" }
-convention-feature = { id = "moisesmusicplayer.android.feature", version = "unspecified" }
+convention-library-compose = { id = "moisesmusicplayer.android.library.compose", version = "unspecified" }
+
 
 
 

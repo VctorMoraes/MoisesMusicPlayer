@@ -15,7 +15,6 @@ android {
 
 dependencies {
     implementation(project(":feature:song-search"))
-    implementation(project(":data:media-player-service"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime)

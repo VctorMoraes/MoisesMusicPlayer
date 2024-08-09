@@ -8,6 +8,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:model"))
+
     api(libs.androidx.media3.exoplayer)
     api(libs.androidx.media3.session)
 }

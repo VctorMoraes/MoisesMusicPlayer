@@ -1,0 +1,17 @@
+{
+  "resultCount": 5,
+  "results": [
+    {
+      "wrapperType": "track",
+      "artistId": 488289,
+      "collectionId": 725812243,
+      "trackId": 725812422,
+      "artistName": "Megadeth",
+      "collectionName": "Countdown to Extinction (Bonus Track Version)",
+      "trackName": "Architecture of Aggression",
+      "previewUrl": "https://song_preview_url.mp4",
+      "artworkUrl100": "https://song_artwork_url.jpg"
+    }
+  ]
+}
+

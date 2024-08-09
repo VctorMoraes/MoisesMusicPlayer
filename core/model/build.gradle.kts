@@ -3,5 +3,9 @@ plugins {
 }
 
 android {
-    namespace = "com.victor.model"
+    namespace = "com.victor.core.model"
+
+    testOptions {
+        unitTests.isReturnDefaultValues = true
+    }
 }

@@ -3,6 +3,7 @@ package com.victor.network
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
+import com.victor.exceptions.NoConnectionException
 import okhttp3.Interceptor
 import okhttp3.Response
 import javax.inject.Inject

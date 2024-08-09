@@ -27,4 +27,17 @@ fun DependencyHandlerScope.kaptAndroidTest(versionCatalogAlias: String) {
     add(configurationName, libs.findLibrary(versionCatalogAlias).get())
 }
 
+context(Project)
+fun DependencyHandlerScope.testImplementation(versionCatalogAlias: String) {
+    val configurationName = object {}.javaClass.enclosingMethod.name
+    add(configurationName, libs.findLibrary(versionCatalogAlias).get())
+}
+
+context(Project)
+fun DependencyHandlerScope.androidTestImplementation(versionCatalogAlias: String) {
+    val configurationName = object {}.javaClass.enclosingMethod.name
+    add(configurationName, libs.findLibrary(versionCatalogAlias).get())
+}
+
+
 

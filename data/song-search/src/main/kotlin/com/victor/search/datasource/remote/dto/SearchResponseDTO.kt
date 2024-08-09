@@ -11,10 +11,12 @@ data class SearchResponseDTO(
 
 @Serializable
 data class SearchItemResponseDTO(
+    @SerialName("wrapperType") val wrapperType: String = "",
     @SerialName("trackId") val trackId: Long = 0L,
     @SerialName("artistName") val artistName: String = "",
+    @SerialName("collectionId") val collectionId: Long = 0L,
     @SerialName("collectionName") val collectionName: String = "",
     @SerialName("trackName") val trackName: String = "",
-    @SerialName("artworkUrl100") val artworkUrl100: String = "",
-    @SerialName("previewUrl") val songPreviewUrl: String = ""
+    @SerialName("artworkUrl100") val artworkUrl100: String? = null,
+    @SerialName("previewUrl") val songPreviewUrl: String? = null
 )

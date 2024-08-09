@@ -8,6 +8,8 @@ android {
 }
 
 dependencies {
+    api(project(":core:common:exceptions"))
+
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.okhttp.logging)
     implementation(libs.retrofit.core)

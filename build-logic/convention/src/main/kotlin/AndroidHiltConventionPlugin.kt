@@ -1,7 +1,6 @@
 import com.victor.convention.implementation
 import com.victor.convention.kapt
 import com.victor.convention.kaptAndroidTest
-import com.victor.convention.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies

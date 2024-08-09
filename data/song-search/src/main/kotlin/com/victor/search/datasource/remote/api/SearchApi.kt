@@ -15,4 +15,10 @@ interface SearchApi {
         @Query("offset") offset: Int = 0,
     ): Response<SearchResponseDTO>
 
+    @GET("/lookup")
+    suspend fun searchAlbumById(
+        @Query("id") id: String,
+        @Query("entity") media: String = "song",
+    ): Response<SearchResponseDTO>
+
 }

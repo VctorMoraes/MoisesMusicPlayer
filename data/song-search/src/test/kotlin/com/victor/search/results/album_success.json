@@ -1,0 +1,68 @@
+{
+  "resultCount": 16,
+  "results": [
+    {
+      "wrapperType": "collection",
+      "artistId": 488289,
+      "collectionId": 725812243,
+      "artistName": "Megadeth",
+      "collectionName": "Countdown to Extinction (Bonus Track Version)",
+      "artworkUrl100": "https://song_artwork_url.jpg"
+    },
+    {
+      "wrapperType": "track",
+      "artistId": 488289,
+      "collectionId": 725812243,
+      "trackId": 725812407,
+      "artistName": "Megadeth",
+      "collectionName": "Countdown to Extinction (Bonus Track Version)",
+      "trackName": "Skin O' My Teeth",
+      "previewUrl": "https://song_preview_url.mp4",
+      "artworkUrl100": "https://song_artwork_url.jpg"
+    },
+    {
+      "wrapperType": "track",
+      "artistId": 488289,
+      "collectionId": 725812243,
+      "trackId": 725812418,
+      "artistName": "Megadeth",
+      "collectionName": "Countdown to Extinction (Bonus Track Version)",
+      "trackName": "Symphony of Destruction",
+      "previewUrl": "https://song_preview_url.mp4",
+      "artworkUrl100": "https://song_artwork_url.jpg"
+    },
+    {
+      "wrapperType": "track",
+      "artistId": 488289,
+      "collectionId": 725812243,
+      "trackId": 725812422,
+      "artistName": "Megadeth",
+      "collectionName": "Countdown to Extinction (Bonus Track Version)",
+      "trackName": "Architecture of Aggression",
+      "previewUrl": "https://song_preview_url.mp4",
+      "artworkUrl100": "https://song_artwork_url.jpg"
+    },
+    {
+      "wrapperType": "track",
+      "artistId": 488289,
+      "collectionId": 725812243,
+      "trackId": 725812440,
+      "artistName": "Megadeth",
+      "collectionName": "Countdown to Extinction (Bonus Track Version)",
+      "trackName": "Foreclosure of a Dream",
+      "previewUrl": "https://song_preview_url.mp4",
+      "artworkUrl100": "https://song_artwork_url.jpg"
+    },
+    {
+      "wrapperType": "track",
+      "artistId": 488289,
+      "collectionId": 725812243,
+      "trackId": 725812461,
+      "artistName": "Megadeth",
+      "collectionName": "Countdown to Extinction (Bonus Track Version)",
+      "trackName": "Sweating Bullets",
+      "previewUrl": "https://song_preview_url.mp4",
+      "artworkUrl100": "https://song_artwork_url.jpg"
+    }
+  ]
+}

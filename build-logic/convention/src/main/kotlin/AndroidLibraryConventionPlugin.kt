@@ -1,6 +1,8 @@
 import com.android.build.gradle.LibraryExtension
 import com.victor.convention.configureKotlinAndroid
+import com.victor.convention.implementation
 import com.victor.convention.libs
+import com.victor.convention.testImplementation
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
@@ -17,10 +19,12 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
 
             extensions.configure<LibraryExtension> {
                 defaultConfig.targetSdk = 34
+                defaultConfig.minSdk = 27
+                defaultConfig.multiDexEnabled = true
                 configureKotlinAndroid()
             }
+
             dependencies {
-                add("androidTestImplementation", kotlin("test"))
                 add("testImplementation", kotlin("test"))
             }
         }
