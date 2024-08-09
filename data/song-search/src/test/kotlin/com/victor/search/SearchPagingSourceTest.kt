@@ -5,7 +5,7 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingSource
 import androidx.paging.testing.TestPager
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
-import com.victor.exceptions.NoConnectionException
+import com.victor.exceptions.UnknownException
 import com.victor.search.datasource.remote.SearchPagingSource
 import com.victor.search.datasource.remote.api.SearchApi
 import com.victor.search.datasource.remote.dto.SearchItemResponseDTO
@@ -147,8 +147,8 @@ class SearchPagingSourceTest {
         mockWebServer.enqueue(response)
 
         val result = testPager.refresh() as PagingSource.LoadResult.Error
-        Assert.assertEquals(NoConnectionException::class.java, result.throwable.javaClass)
-        Assert.assertThrows(NoConnectionException::class.java) {
+        Assert.assertEquals(UnknownException::class.java, result.throwable.javaClass)
+        Assert.assertThrows(UnknownException::class.java) {
             throw result.throwable
         }
     }
