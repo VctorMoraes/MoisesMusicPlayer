@@ -29,6 +29,13 @@ More information:
 * [Using MediaPlayer in a service](https://developer.android.com/media/platform/mediaplayer#mpandservices)
 * [Background playback with a MediaSessionService](https://developer.android.com/media/media3/session/background-playback)
 
+### Convetion Plugins
+A `build-logic` module containing Convention Plugins resposible for common module configutaions. This approach is based on the [NowInAndroid App](https://github.com/android/nowinandroid/blob/c1d6c88bb06b28507fa99d38c7e90a545b51dcbf/build-logic/README.md), and on https://developer.squareup.com/blog/herding-elephants/
+
+By setting up convention plugins in `build-logic`, we can avoid duplicated build script setup, messy subproject configurations, and allow custom configurations for plugins.
+
+The `build-logic` module is included in the project settings.gradle.kts as pluginManagement resolution.
+
 ## API
 Media information requests made to [iTunes Search API](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/Searching.html#//apple_ref/doc/uid/TP40017632-CH5-SW1).
 
