@@ -45,7 +45,30 @@ To check overall code coverage, run:
 
 ![image](https://github.com/user-attachments/assets/7a596085-4475-4246-8f93-7e36f960af9e)
 
+## Aditional Features
+### Loading animation when searching for a song:
+![image](https://github.com/user-attachments/assets/6e8c601b-32ee-491a-ae25-b55cae4adda7)
+
+### Loading animation when paginating a list of songs:
+![image](https://github.com/user-attachments/assets/a375422d-b1d3-4b42-b14c-0bac5cabbdef)
+
+### Currently playing animation:
+![image](https://github.com/user-attachments/assets/514222fb-c27b-4732-b2fe-2741a51735dc)
+
+### Currently playing notification with functional actions:
+![image](https://github.com/user-attachments/assets/532819fa-2a7c-4d4c-a328-85d9214e72e6)
+
+### Playlists
+* When a song in the Songs Search is clicked, all 10 following songs will be added to the playlist in order, and the clicked song will be played.
+* When a song in the album list is clicked, all songs from that album will be added to the playlist in order, and the clicked song will be played.
+
+  ![image](https://github.com/user-attachments/assets/a795da07-7a37-42c0-ac3f-befdb3b8d8cf)
+
+### Seek to position and player actions
+Functional seek to position in the slider and player actions.
+
 ## Next Steps
 * Increase Unit test code coverage
 * Create a Local Database with **Room** or **Realm** to act as a Single Source of Truth and cache song searchs.
 * Create a *currentPlaying* component available in all Screens that can directly open the **SongPlayer**.
+* Optimize Song selection in the Album Screen.
