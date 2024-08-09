@@ -24,6 +24,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -47,7 +48,9 @@ fun PlayerScreen(
                     IconButton(onClick = { onBackClicked() }) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                            contentDescription = "Go Back"
+                            contentDescription = stringResource(
+                                id = com.victor.common.strings.R.string.go_back_content_description
+                            )
                         )
                     }
                 },
@@ -56,7 +59,9 @@ fun PlayerScreen(
                     IconButton(onClick = { showBottomSheet = true }) {
                         Icon(
                             imageVector = Icons.Filled.MoreVert,
-                            contentDescription = "More Options"
+                            contentDescription = stringResource(
+                                id = com.victor.common.strings.R.string.more_options_content_description
+                            )
                         )
                     }
                 },

@@ -24,9 +24,4 @@ dependencies {
     //Splash
     implementation(libs.androidx.splashscreen)
     implementation(libs.androidx.navigation)
-
-
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
 }

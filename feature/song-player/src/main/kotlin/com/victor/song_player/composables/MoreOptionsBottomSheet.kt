@@ -160,7 +160,9 @@ private fun OpenAlbumButton(onOpenAlbumClick: () -> Unit) {
                 .padding(start = 32.dp)
                 .size(24.dp),
             painter = painterResource(id = R.drawable.ic_playlist),
-            contentDescription = "Albums",
+            contentDescription = stringResource(
+                id = com.victor.common.strings.R.string.open_album_content_description
+            ),
         )
         Text(
             modifier = Modifier.padding(start = 16.dp),

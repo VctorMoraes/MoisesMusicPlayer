@@ -37,16 +37,15 @@ class PlayerViewModel @Inject constructor(
 
     private val _currentMedia: MutableStateFlow<MediaModel?> =
         MutableStateFlow(value = null)
-
     val currentMedia: StateFlow<MediaModel?>
         get() = _currentMedia.asStateFlow()
 
 
     private val _albumState: MutableStateFlow<List<MediaModel?>> =
         MutableStateFlow(value = emptyList())
-
     val albumState: StateFlow<List<MediaModel?>>
         get() = _albumState.asStateFlow()
+
 
     private val _progress: MutableState<Long> = mutableLongStateOf(0L)
     val progress: LongState
@@ -107,10 +106,7 @@ class PlayerViewModel @Inject constructor(
     fun playAlbum(clickedSongId: String) {
         albumState.value.let {
             mediaController.playPlaylist(it, clickedSongId)
-
-//            mediaController.mediait
         }
-
     }
 
     fun next() {

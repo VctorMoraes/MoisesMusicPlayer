@@ -26,6 +26,5 @@ dependencies {
     testImplementation(libs.kotlinx.serialization.json)
     testImplementation(libs.mockk)
     testImplementation(libs.okhttp.mockwebserver)
-    testImplementation("app.cash.turbine:turbine:1.1.0")
-
+    testImplementation(libs.turbine)
 }

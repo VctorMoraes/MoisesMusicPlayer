@@ -22,6 +22,7 @@ import androidx.compose.material3.SearchBar
 import androidx.compose.material3.SearchBarDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.material3.rememberTopAppBarState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -30,6 +31,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -53,26 +55,8 @@ fun SearchScreen(
         TopAppBarDefaults.exitUntilCollapsedScrollBehavior(rememberTopAppBarState())
 
     Scaffold(
-        modifier = Modifier
-            .nestedScroll(scrollBehavior.nestedScrollConnection),
-        topBar = {
-            MediumTopAppBar(
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color.Transparent,
-                    scrolledContainerColor = Color.Transparent,
-                    titleContentColor = MaterialTheme.colorScheme.onSurface,
-                ),
-                title = {
-                    Text(
-                        text = "Songs",
-                        modifier = Modifier.fillMaxWidth(),
-                        style = MaterialTheme.typography.headlineLarge
-                    )
-                },
-                scrollBehavior = scrollBehavior
-            )
-
-        }
+        modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
+        topBar = { SongsTopBar(scrollBehavior) }
     ) { paddingValues ->
         val songPagingItems: LazyPagingItems<MediaModel> =
             viewModel.songListState.collectAsLazyPagingItems()
@@ -85,7 +69,7 @@ fun SearchScreen(
             query = searchQuery.value,
             onQueryChange = { viewModel.onSearchQueryChange(it) },
             onSearch = { },
-            placeholder = { Text(text = "Search") },
+            placeholder = { Text(text = stringResource(id = com.victor.common.strings.R.string.search)) },
             leadingIcon = {
                 Icon(
                     imageVector = Icons.Default.Search,
@@ -95,20 +79,8 @@ fun SearchScreen(
             },
             trailingIcon = {
                 val isLoadingSongs = songPagingItems.loadState.refresh is LoadState.Loading
-                if (isLoadingSongs) {
-                    CircularProgressIndicator(
-                        modifier = Modifier
-                            .size(32.dp),
-                        color = Color.White
-                    )
-                } else {
-                    IconButton(onClick = { viewModel.onSearchTrailingIconClick() }) {
-                        Icon(
-                            imageVector = Icons.Default.Clear,
-                            tint = MaterialTheme.colorScheme.onSurface,
-                            contentDescription = null
-                        )
-                    }
+                SearchBarTrailingIcon(isLoadingSongs = isLoadingSongs) {
+                    viewModel.onSearchTrailingIconClick()
                 }
             },
             colors = SearchBarDefaults.colors(
@@ -163,6 +135,45 @@ fun SearchScreen(
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun SongsTopBar(scrollBehavior: TopAppBarScrollBehavior) {
+    MediumTopAppBar(
+        colors = TopAppBarDefaults.topAppBarColors(
+            containerColor = Color.Transparent,
+            scrolledContainerColor = Color.Transparent,
+            titleContentColor = MaterialTheme.colorScheme.onSurface,
+        ),
+        title = {
+            Text(
+                text = stringResource(id = com.victor.common.strings.R.string.songs),
+                modifier = Modifier.fillMaxWidth(),
+                style = MaterialTheme.typography.headlineLarge
+            )
+        },
+        scrollBehavior = scrollBehavior
+    )
+}
+
+@Composable
+private fun SearchBarTrailingIcon(isLoadingSongs: Boolean, onSearchTrailingIconClick: () -> Unit) {
+    if (isLoadingSongs) {
+        CircularProgressIndicator(
+            modifier = Modifier
+                .size(32.dp),
+            color = Color.White
+        )
+    } else {
+        IconButton(onClick = { onSearchTrailingIconClick() }) {
+            Icon(
+                imageVector = Icons.Default.Clear,
+                tint = MaterialTheme.colorScheme.onSurface,
+                contentDescription = null
+            )
+        }
+    }
+}
+
 @Composable
 private fun NoInternetConnection() {
     Column(
@@ -173,11 +184,13 @@ private fun NoInternetConnection() {
         Icon(
             modifier = Modifier.size(128.dp),
             painter = painterResource(id = R.drawable.no_connection),
-            contentDescription = "No connection"
+            contentDescription = stringResource(id = com.victor.common.strings.R.string.search)
         )
         Text(
             modifier = Modifier.padding(horizontal = 64.dp),
-            text = "No internet connection",
+            text = stringResource(
+                id = com.victor.common.strings.R.string.no_internet_connection_content_description
+            ),
             textAlign = TextAlign.Center,
             style = MaterialTheme.typography.headlineLarge
         )

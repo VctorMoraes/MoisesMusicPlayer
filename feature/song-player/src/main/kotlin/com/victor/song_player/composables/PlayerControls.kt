@@ -25,6 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.victor.feature.song_player.R
 import java.text.SimpleDateFormat
@@ -126,10 +127,18 @@ fun ProgressText(
             progress
         }
 
-        val dateFormat = SimpleDateFormat("mm:ss", Locale.getDefault())
+        val dateFormat = SimpleDateFormat(
+            stringResource(id = com.victor.common.strings.R.string.min_seconds_date_format),
+            Locale.getDefault()
+        )
 
         Text(text = dateFormat.format(Date(currentProgress)))
-        Text(text = "-${dateFormat.format(Date(duration - currentProgress))}")
+        Text(
+            text = stringResource(
+                id = com.victor.common.strings.R.string.decreasing_duration,
+                dateFormat.format(Date(duration - currentProgress))
+            )
+        )
     }
 }
 
@@ -155,7 +164,9 @@ fun Controls(
                     onPreviousClicked()
                 },
             painter = painterResource(id = R.drawable.seek),
-            contentDescription = "goBack"
+            contentDescription = stringResource(
+                id = com.victor.common.strings.R.string.seek_to_previous_content_description
+            )
         )
         Image(
             modifier = Modifier
@@ -164,7 +175,9 @@ fun Controls(
                     onPlayPauseClicked()
                 },
             painter = painterResource(id = R.drawable.play_pause),
-            contentDescription = "goBack"
+            contentDescription = stringResource(
+                id = com.victor.common.strings.R.string.play_pause_content_description
+            )
         )
         Image(
             modifier = Modifier
@@ -173,7 +186,9 @@ fun Controls(
                     onNextClicked()
                 },
             painter = painterResource(id = R.drawable.seek),
-            contentDescription = "goBack"
+            contentDescription = stringResource(
+                id = com.victor.common.strings.R.string.seek_to_next_content_description
+            )
         )
     }
 }

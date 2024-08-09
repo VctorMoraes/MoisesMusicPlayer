@@ -94,13 +94,13 @@ class SongSearchViewModel @Inject constructor(
         controllerFuture.addListener(
             {
                 mediaController = controllerFuture.get()
-                setupCurrentSong()
+                setupCurrentSongListener()
             },
             MoreExecutors.directExecutor()
         )
     }
 
-    private fun setupCurrentSong() {
+    private fun setupCurrentSongListener() {
         _currentSongId.value = mediaController.currentMediaItem?.mediaId ?: ""
 
         mediaController.addListener(object : Player.Listener {
