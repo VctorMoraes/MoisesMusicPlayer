@@ -1,8 +1,12 @@
 # [MoisesMusicPlayer](https://github.com/VctorMoraes/MoisesMusicPlayer)
 
 ## Project
+MoisesMusicPlayer is an Android App that search songs through Apple iTunes API based in a user text input, with a functional player.
 
 ## How To
+To run the APP:
+* Install the APK sent with this repo on an Android device/emulator, or
+* Clone the project in the AndroidStudio.
 
 ## Architecture
 * Multi Module for separation of concerns.
@@ -10,9 +14,10 @@
 * Hilt for dependency injection.
 * Retrofit and OkHttp for APIs consumption.
 * Media3 ExoPlayer and MediaSession as Media Player.
+* Kotlin Flow for data transfer.
 
 ### Project Organization
-Multi Module project separated into 3 main layers: `:feature`, `:domain` and `:data`. There is also a `:core` module for common classes used accross multiple submodules.\
+Multi Module project separated into 3 main layers: `:feature`, `:domain` and `:data`. There is also a `:core` module for common classes used accross multiple submodules.
 
 ### Architcture diagram:
 ![layer_arch](https://github.com/user-attachments/assets/22504bc1-8e9d-42c4-b6be-5a1a20a13d43)
@@ -36,7 +41,7 @@ Media information requests made to [iTunes Search API](https://developer.apple.c
 ## Test Coverage
 Test Coverage metrics are being generated using [**Kover**](https://github.com/Kotlin/kotlinx-kover).
 
-Currently, the only module with Unit test is `:data:song-search`, with a coverage of **53%** in all methods.
+Currently, the only module with Unit Tests and CodeCoverage is `:data:song-search`, with a coverage of **53%** in all methods.
 
 To check overall code coverage, run:
 ```bash
